@@ -1,8 +1,9 @@
-package Principal;
 
 public abstract class Personagem {
 
-    protected int vida;
+    protected int vida; //vida atual
+    protected Inventario inventario;
+    
 
     public Personagem() {
 
@@ -28,5 +29,9 @@ public abstract class Personagem {
         } else {
             this.vida = vida;
         }
+    }
+    
+     public Inventario getInventario() {
+        return inventario;
     }
 }

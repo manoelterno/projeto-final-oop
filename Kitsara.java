@@ -1,4 +1,3 @@
-package Principal;
 
 import java.util.Random;
 

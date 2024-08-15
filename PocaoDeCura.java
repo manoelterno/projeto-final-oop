@@ -1,4 +1,3 @@
-package Principal;
 
 public class PocaoDeCura extends Item {
 

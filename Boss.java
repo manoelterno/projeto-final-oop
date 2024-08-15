@@ -1,4 +1,3 @@
-package Principal;
 
 public abstract class Boss extends Personagem {
 

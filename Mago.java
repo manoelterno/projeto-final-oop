@@ -1,13 +1,14 @@
-package Principal;
 
 public class Mago extends Player {
 
     private final int dano_normal = 175;
     private final int dano_especial = 350;
     private int delay_especial = 0;
-
+    private Inventario inventario;
+    
     public Mago() {
         super(800);
+        this.inventario = new Inventario(3,3);
     }
 
     @Override
@@ -62,4 +63,9 @@ public class Mago extends Player {
         this.delay_especial = delay_especial;
     }
 
+    public Inventario getInventario() {
+        return inventario;
+    }
+
+    
 }

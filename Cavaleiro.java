@@ -1,13 +1,14 @@
-package Principal;
 
 public class Cavaleiro extends Player {
 
     private final int dano_normal = 100;
     private final int dano_especial = 200;
     private int delay_especial = 0;
-
+    private Inventario inventario;
+    
     public Cavaleiro() {
         super(1000);
+        this.inventario = new Inventario(3,3);
     }
 
     @Override
@@ -66,5 +67,8 @@ public class Cavaleiro extends Player {
     public void setDelay_especial(int delay_especial) {
         this.delay_especial = delay_especial;
     }
-
+    
+    public Inventario getInventario() {
+        return inventario;
+    }
 }
