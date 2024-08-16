@@ -8,7 +8,6 @@ public class Jogo {
     private final Personagem chefao;
     private Personagem jogador;
     
-
     public Jogo() {
         contador_rodadas = 1;
         input = new Scanner(System.in);
@@ -30,9 +29,8 @@ public class Jogo {
             jogador = new Cavaleiro();
 
         } else if (tipoClasse == 2) {
-
             jogador = new Mago();
-
+            
         }
 
         System.out.println("\n\n\n\n\nINICIANDO A BATALHA...\n\n\n\n\n");
@@ -48,6 +46,7 @@ public class Jogo {
                 atacar();
 
             } else {
+                
                 if (qualDecisao == 2) {
                     System.out.println("\nQual item deseja usar?\n (1) Cura\n (2) Forca");
                     System.out.print("Digite sua opcao: ");
@@ -55,17 +54,13 @@ public class Jogo {
 
                     if (tipoItem == 1) {
                         pocao_Cura();
-                        
 
                     } else if (tipoItem == 2) {
                         pocao_Forca();
                         
-
                     }
                 }
             }
-
-            
 
             if (chefao.ataqueEspecial() == false) {
                 jogador.setVida(jogador.getVida() - chefao.ataqueNormal());
@@ -137,7 +132,6 @@ public class Jogo {
                 }
 
             } else {
-
                 if (tipoAtaque == 1) {
                     chefao.setVida(chefao.getVida() - jogador.ataqueNormal());
                     System.out.println("Voce acertou a Kitsara e deu " + jogador.ataqueNormal() + " dano");
@@ -173,6 +167,7 @@ public class Jogo {
             System.out.println("Poções restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e " + jogador.getInventario().getNum_pocao_forca() + " de força");
             return;
         }
+        
         jogador.setVida(jogador.getVida() + 100);
         jogador.getInventario().usarVida();
         System.out.println("Você usou uma poção de cura e aumentou sua vida atual em 100");
@@ -185,6 +180,7 @@ public class Jogo {
             System.out.println("Poções restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e " + jogador.getInventario().getNum_pocao_forca() + " de força");
             return;
         }
+        
         jogador.getInventario().usarForca();
         System.out.println("Você usou uma poção de força e agora seu próximo ataque especial terá o dobro de dano");
         System.out.println("Poções restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e " + jogador.getInventario().getNum_pocao_forca() + " de força");
