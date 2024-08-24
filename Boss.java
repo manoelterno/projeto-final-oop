@@ -1,9 +1,5 @@
 
-public abstract class Boss extends Personagem {
-
-    public Boss() {
-        super();
-    }
+public abstract class Boss extends Personagem { 
 
     public Boss(int vida) {
         super(vida);

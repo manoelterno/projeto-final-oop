@@ -6,25 +6,19 @@ public class Jogo {
     private static int contador_rodadas;
     private final Scanner input;
     private final Personagem chefao;
-    private Personagem jogador;
+    private Player jogador;
 
     public Jogo() {
         contador_rodadas = 1;
         input = new Scanner(System.in);
-        chefao = new Kitsara();
+        chefao = new Monstro();
     }
 
     public void play() {
-        int tipoClasse;
         int qualDecisao;
-        //int tipoItem;
-
-        //ManipularArquivoTexto.abrirArquivoGravar("Historico_Rodadas.txt"); // Abrindo arquivo para gravar
+        ManipularArquivoTexto.abrirArquivoGravacao("log.txt");
         mensagem_boas_vindas();
-
-        tipoClasse = input.nextInt();
-        escolher_classe(tipoClasse);
-
+        escolher_classe();
         mensagem_iniciar_batalha();
 
         while (true) {
@@ -40,39 +34,31 @@ public class Jogo {
             }
 
             ataque_chefao();
-
             mensagem_resultado_rodada();
+            jogador.atualizarDelay();
 
-            // GRAVANDO ARQUIVO COM OS DADOS DE CADA RODADA (Rodada ; Classe ; VidaJogador ; Chefao ; VidaChefao)
-            /*if (jogador instanceof Mago) {
-                ManipularArquivoTexto.gravarArquivo("Rodada" + contador_rodadas + ";"
-                        + Mago.class.getSimpleName() + ";" + jogador.getVida() + ";" + "100"
-                        + ";" + Kitsara.class.getSimpleName() + ";" + chefao.getVida() + ";" + "200"); 
-            }
-
-            if (jogador instanceof Cavaleiro) {
-                ManipularArquivoTexto.gravarArquivo("Rodada" + contador_rodadas + ";"
-                        + Cavaleiro.class.getSimpleName() + ";" + jogador.getVida() + ";" + "100"
-                        + ";" + Kitsara.class.getSimpleName() + ";" + chefao.getVida() + ";" + "200"); 
-            }*/
-            
             if (verificar_fim_de_jogo()) {
+                ManipularArquivoTexto.fecharArquivoGravacao();
                 break;
             }
 
-            System.out.println("\n\n\nINICIANDO A PROXIMA RODADA...\n\n\n");
-
+            System.out.println("\nINICIANDO A PROXIMA RODADA...");
         }
 
-        //ManipularArquivoTexto.fecharArquivoGravacao(); //Fechando arquivo
+        
     }
 
     public void ataque_player() {
         int tipoAtaque;
 
         while (true) {
-            
-            System.out.println("\n\nQual ataque voce deseja usar:\n(1) Ataque Normal\n(2) Ataque Especial");
+            if (jogador.getDelay_especial() > 0) {
+                System.out.println("\nQual ataque voce deseja usar:\n(1) Ataque Normal"
+                        + "\n(2) Ataque Especial (Recarregando...)");
+            } else {
+                System.out.println("\nQual ataque voce deseja usar:\n(1) Ataque Normal"
+                        + "\n(2) Ataque Especial");
+            }
             System.out.print("Digite sua opcao: ");
             tipoAtaque = input.nextInt();
 
@@ -87,60 +73,55 @@ public class Jogo {
             }
         }
 
-        if (jogador instanceof Mago) {
-            ((Mago) jogador).atualizarDelay();
-        } else if (jogador instanceof Cavaleiro) {
-            ((Cavaleiro) jogador).atualizarDelay();
-        }
-
     }
 
     public boolean ataque_mago(int tipoAtaque) {
 
         if (tipoAtaque == 1) {
             chefao.setVida(chefao.getVida() - jogador.ataqueNormal());
-            System.out.println("Voce acertou a Kitsara e deu " + jogador.ataqueNormal() + " dano");
+            System.out.println("O Mago lançou um simples feitiço contra o Monstro e causou " + jogador.ataqueNormal() + " de dano");
             return true;
 
         } else if (tipoAtaque == 2) {
             if (jogador.ataqueEspecial() == true) {
                 if (jogador.getInventario().isEspecial()) {
                     chefao.setVida(chefao.getVida() - ((Mago) jogador).getDano_especial() * 2);
-                    System.out.println("Voce acertou a Kitsara com o poder especial aumentado " + ((Mago) jogador).getDano_especial() * 2 + " dano");
+                    System.out.println("O Mago lançou um feitiço poderoso e fortalecido"
+                            + " contra o Monstro e causou " + ((Mago) jogador).getDano_especial() * 2 + " de dano");
                     jogador.getInventario().setEspecial(false);
                     return true;
                 } else {
                     chefao.setVida(chefao.getVida() - ((Mago) jogador).getDano_especial());
-                    System.out.println("Voce acertou a Kitsara e deu " + ((Mago) jogador).getDano_especial() + " dano");
+                    System.out.println("O Mago lançou um feitiço poderoso contra o Monstro e causou " + ((Mago) jogador).getDano_especial() + " de dano");
                     return true;
                 }
 
             } else {
-                System.out.println("Ataque especial recarregando... Tente no próximo turno");
+                System.out.println("Ataque especial recarregando... Tente no próximo turno.");
                 return false;
             }
         }
         //nunca chega neste return
-        System.out.println("aviso erro");
         return false;
     }
 
     public boolean ataque_cavaleiro(int tipoAtaque) {
         if (tipoAtaque == 1) {
             chefao.setVida(chefao.getVida() - jogador.ataqueNormal());
-            System.out.println("Voce acertou a Kitsara e deu " + jogador.ataqueNormal() + " dano");
+            System.out.println("O Cavaleiro acertou o monstro com um ataque simples e causou " + jogador.ataqueNormal() + " de dano");
             return true;
 
         } else if (tipoAtaque == 2) {
             if (jogador.ataqueEspecial() == true) {
                 if (jogador.getInventario().isEspecial()) {
                     chefao.setVida(chefao.getVida() - ((Cavaleiro) jogador).getDano_especial() * 2);
-                    System.out.println("Voce acertou a Kitsara com o poder especial aumentado " + ((Cavaleiro) jogador).getDano_especial() * 2 + " dano");
+                    System.out.println("O Cavaleiro acertou o monstro com um ataque poderoso e fortalecido, causando " + ((Cavaleiro) jogador).getDano_especial() * 2
+                            + " de dano");
                     jogador.getInventario().setEspecial(false);
                     return true;
                 } else {
                     chefao.setVida(chefao.getVida() - ((Cavaleiro) jogador).getDano_especial());
-                    System.out.println("Voce acertou a Kitsara e deu " + ((Cavaleiro) jogador).getDano_especial() + " dano");
+                    System.out.println("O Cavaleiro acertou o monstro com um ataque poderoso e causou " + ((Cavaleiro) jogador).getDano_especial() + " de dano");
                     return true;
                 }
 
@@ -171,13 +152,19 @@ public class Jogo {
     public void pocao_Cura() {
         if (jogador.getInventario().getNum_pocao_vida() <= 0) {
             System.out.println("Ação inválida.");
-            System.out.println("Poções restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e " + jogador.getInventario().getNum_pocao_forca() + " de força");
+            System.out.println("Poções restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e "
+                    + jogador.getInventario().getNum_pocao_forca() + " de força");
             return;
         }
-
-        jogador.setVida(jogador.getVida() + 100);
+        if (jogador.getVida() + jogador.getInventario().getValor_pocao_vida() > jogador.getVida_max()) {
+            jogador.setVida(jogador.getVida_max());
+        } else {
+            jogador.setVida(jogador.getVida() + jogador.getInventario().getValor_pocao_vida());
+        }
         jogador.getInventario().usarVida();
-        System.out.println("Você usou uma poção de cura e aumentou sua vida atual em 100");
+        System.out.println("O " + jogador.getClass().getName() + " usou uma pocao de cura e aumentou sua vida atual em " 
+                + jogador.getInventario().getValor_pocao_vida());
+        System.out.println("A vida atual do " + jogador.getClass().getName() + " é " + jogador.getVida());
         System.out.println("Poções restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e " + jogador.getInventario().getNum_pocao_forca() + " de força");
     }
 
@@ -195,26 +182,41 @@ public class Jogo {
 
     public void mensagem_boas_vindas() {
         System.out.println("BEM-VINDO AO RPG:");
-        System.out.println("Escolha sua classe\n(1) Cavaleiro\n(2) Mago");
-        System.out.print("Digite sua opcao: ");
+
     }
 
-    public void escolher_classe(int tipoClasse) {
+    public void escolher_classe() {
+        System.out.println("Escolha sua classe\n (1) Cavaleiro\nResistente, porém modesto.\n (2) Mago\nPoderoso, porém frágil.");
+        System.out.print("Digite sua opcao: ");
+        int tipoClasse;
 
-        if (tipoClasse == 1) {
-            jogador = new Cavaleiro();
+        while (true) {
+            tipoClasse = input.nextInt();
+            switch (tipoClasse) {
+                case 1:
+                    jogador = new Cavaleiro();
+                    return;
+                case 2:
+                    jogador = new Mago();
+                    return;
+                default:
+                    System.out.println("Entrada invalida. Tente Novamente.");
+                    continue;
 
-        } else if (tipoClasse == 2) {
-            jogador = new Mago();
+            }
         }
     }
 
     public void mensagem_iniciar_batalha() {
-        System.out.println("\n\n\n\n\nINICIANDO A BATALHA...\n\n\n\n\n");
-        System.out.println("Vida do chefao: " + chefao.getVida());
-        System.out.println("Vida do jogador: " + jogador.getVida());
+        System.out.println("\n\nINICIANDO A BATALHA...\n\n");
+        System.out.println("Vida do " + jogador.getClass().getName() + ": " + jogador.getVida());
+        System.out.println("Vida do " + chefao.getClass().getName() + ": " + chefao.getVida() + "\n");
         System.out.println("Inventario do jogador:\n" + jogador.getInventario().getNum_pocao_vida() + " pocoes de vida\n"
                 + jogador.getInventario().getNum_pocao_forca() + " pocoes de forca");
+
+        ManipularArquivoTexto.gravarArquivo("INICIO DA BATALHA");
+        ManipularArquivoTexto.gravarArquivo("Vida do " + jogador.getClass().getName() + ": " + jogador.getVida());
+        ManipularArquivoTexto.gravarArquivo("Vida do " + chefao.getClass().getName() + ": " + chefao.getVida() + "\n");
 
     }
 
@@ -226,30 +228,36 @@ public class Jogo {
     }
 
     public void mensagem_resultado_rodada() {
-        System.out.println("\n\nRESULTADO DA RODADA");
-        System.out.println("Vida do jogador: " + jogador.getVida());
-        System.out.println("Vida do boss: " + chefao.getVida() + "\n\n");
+        System.out.println("\nRESULTADO DA RODADA");
+        System.out.println("Vida do " + jogador.getClass().getName() + ": " + jogador.getVida());
+        System.out.println("Vida do " + chefao.getClass().getName() + ": " + chefao.getVida() + "\n");
+
+        ManipularArquivoTexto.gravarArquivo("RESULTADO DA RODADA " + (contador_rodadas - 1));
+        ManipularArquivoTexto.gravarArquivo("Vida do " + jogador.getClass().getName() + ": " + jogador.getVida());
+        ManipularArquivoTexto.gravarArquivo("Vida do " + chefao.getClass().getName() + ": " + chefao.getVida() + "\n");
+
     }
 
     public void ataque_chefao() {
         if (chefao.ataqueEspecial() == false) {
             jogador.setVida(jogador.getVida() - chefao.ataqueNormal());
-            System.out.println("Voce foi acertado pela Kitsara e sofreu " + chefao.ataqueNormal() + " dano");
+            System.out.println("O Monstro atacou o " + jogador.getClass().getName() + " e causou " + chefao.ataqueNormal() + " de dano");
 
         } else {
-            jogador.setVida(jogador.getVida() - ((Kitsara) chefao).getDano_especial());
-            System.out.println("Voce foi acertado pela Kitsara e sofreu " + ((Kitsara) chefao).getDano_especial() + " dano");
+            jogador.setVida(jogador.getVida() - ((Monstro) chefao).getDano_especial());
+            System.out.println("O Monstro atacou o " + jogador.getClass().getName() + " com um ataque especial e causou "
+                    + ((Monstro) chefao).getDano_especial() + " de dano");
         }
     }
 
     public boolean verificar_fim_de_jogo() {
         if (jogador.vivoOuMorto() == true && chefao.vivoOuMorto() == false) {
-            System.out.println("Voce venceu!");
+            System.out.println("Voce venceu! Os dados da partida foram salvos no arquivo log.txt");
             return true;
         }
 
         if (jogador.vivoOuMorto() == false && chefao.vivoOuMorto() == true) {
-            System.out.println("Voce perdeu!\nGame Over");
+            System.out.println("Voce perdeu! Os dados da partida foram salvos no arquivo log.txt\nGame Over");
             return true;
         }
         return false;

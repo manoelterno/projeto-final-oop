@@ -1,14 +1,14 @@
 
 public class Cavaleiro extends Player {
 
-    private final int dano_normal = 100;
-    private final int dano_especial = 200;
-    private int delay_especial = 0;
-    private Inventario inventario;
-    
+    private final int dano_normal;
+    private final int dano_especial;
+
     public Cavaleiro() {
-        super(1000);
-        this.inventario = new Inventario(3,3);
+        super(1500);
+        this.dano_normal = 100;
+        this.dano_especial = 200;
+        this.inventario = new Inventario(3, 3);
     }
 
     @Override
@@ -35,40 +35,12 @@ public class Cavaleiro extends Player {
         }
     }
 
-    @Override
-    public void curar() {
-
-    }
-
-    @Override
-    public void dobrarDano() {
-
-    }
-
-    public void atualizarDelay() {
-        if (this.delay_especial > 0) {
-            this.delay_especial--;
-        }
-    }
-
     public int getDano_normal() {
         return dano_normal;
     }
-
 
     public int getDano_especial() {
         return dano_especial;
     }
 
-    public int getDelay_especial() {
-        return delay_especial;
-    }
-
-    public void setDelay_especial(int delay_especial) {
-        this.delay_especial = delay_especial;
-    }
-    
-    public Inventario getInventario() {
-        return inventario;
-    }
 }

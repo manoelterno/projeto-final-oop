@@ -1,12 +1,14 @@
 
 public class Inventario {
     private int num_pocao_vida;
+    private final int valor_pocao_vida;
     private int num_pocao_forca;
     private boolean especial = false;
 
     public Inventario(int num_pocao_vida, int num_pocao_forca) {
         this.num_pocao_vida = num_pocao_vida;
         this.num_pocao_forca = num_pocao_forca;
+        this.valor_pocao_vida = 300;
     }
 
     public int getNum_pocao_vida() {
@@ -42,6 +44,10 @@ public class Inventario {
 
     public boolean isEspecial() {
         return especial;
+    }
+
+    public int getValor_pocao_vida() {
+        return valor_pocao_vida;
     }
     
     

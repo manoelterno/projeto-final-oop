@@ -1,14 +1,14 @@
 
 public class Mago extends Player {
 
-    private final int dano_normal = 175;
-    private final int dano_especial = 350;
-    private int delay_especial = 0;
-    private Inventario inventario;
-    
+    private final int dano_normal;
+    private final int dano_especial;
+
     public Mago() {
         super(800);
-        this.inventario = new Inventario(3,3);
+        this.dano_normal = 175;
+        this.dano_especial = 350;
+        this.inventario = new Inventario(3, 3);
     }
 
     @Override
@@ -35,37 +35,8 @@ public class Mago extends Player {
         }
     }
 
-    @Override
-    public void curar() {
-
-    }
-
-    @Override
-    public void dobrarDano() {
-
-    }
-
-    public void atualizarDelay() {
-        if (this.delay_especial > 0) {
-            this.delay_especial--;
-        }
-    }
-
     public int getDano_especial() {
         return dano_especial;
-    }   
-
-    public int getDelay_especial() {
-        return delay_especial;
     }
 
-    public void setDelay_especial(int delay_especial) {
-        this.delay_especial = delay_especial;
-    }
-
-    public Inventario getInventario() {
-        return inventario;
-    }
-
-    
 }

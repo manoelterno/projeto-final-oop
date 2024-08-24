@@ -14,7 +14,7 @@ public class ManipularArquivoTexto {
     public ManipularArquivoTexto() {
     }
 
-    public static void abrirArquivoGravar(String nomeArquivo) {
+    public static void abrirArquivoGravacao(String nomeArquivo) {
         try {
             gravador = new Formatter(nomeArquivo);
         } catch (FileNotFoundException ex) {

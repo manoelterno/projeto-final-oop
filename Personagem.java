@@ -2,21 +2,13 @@
 public abstract class Personagem {
 
     protected int vida; //vida atual
-    protected Inventario inventario;
-    
-
-    public Personagem() {
-
-    }
 
     public Personagem(int vida) {
         this.vida = vida;
     }
 
     public abstract boolean vivoOuMorto();
-
     public abstract int ataqueNormal();
-
     public abstract boolean ataqueEspecial();
 
     public int getVida() {
@@ -29,9 +21,5 @@ public abstract class Personagem {
         } else {
             this.vida = vida;
         }
-    }
-    
-     public Inventario getInventario() {
-        return inventario;
     }
 }

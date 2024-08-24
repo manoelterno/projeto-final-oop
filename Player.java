@@ -1,18 +1,13 @@
 
-
 public abstract class Player extends Personagem {
 
-    protected Item cura;
-    protected Item forca;
-
-    public Player() {
-        super();
-        cura = new PocaoDeCura();
-        forca = new PocaoDeForca();
-    }
+    protected Inventario inventario;
+    protected int delay_especial = 0;
+    protected final int vida_max;
 
     public Player(int vida) {
         super(vida);
+        vida_max = vida;
     }
 
     @Override
@@ -24,24 +19,25 @@ public abstract class Player extends Personagem {
     @Override
     public abstract boolean vivoOuMorto();
 
-    public abstract void curar();
-
-    public abstract void dobrarDano();
-
-    public Item getCura() {
-        return cura;
+    public Inventario getInventario() {
+        return inventario;
     }
 
-    public void setCura(Item cura) {
-        this.cura = cura;
+    public int getDelay_especial() {
+        return delay_especial;
     }
 
-    public Item getForca() {
-        return forca;
+    public void setDelay_especial(int delay_especial) {
+        this.delay_especial = delay_especial;
     }
 
-    public void setForca(Item forca) {
-        this.forca = forca;
+    public void atualizarDelay() {
+        if (this.delay_especial > 0) {
+            this.delay_especial--;
+        }
     }
 
+    public int getVida_max() {
+        return vida_max;
+    }
 }

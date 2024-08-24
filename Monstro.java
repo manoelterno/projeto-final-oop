@@ -1,13 +1,13 @@
 
 import java.util.Random;
 
-public class Kitsara extends Boss {
+public class Monstro extends Boss {
 
     private final int dano_normal = 150;
     private int dano_especial = 300;
     private final Random random;
 
-    public Kitsara() {
+    public Monstro() {
         super(2000);
         random = new Random();
     }
