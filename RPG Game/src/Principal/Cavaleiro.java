@@ -46,7 +46,7 @@ public class Cavaleiro extends Player {
      */
     @Override
     public boolean ataqueEspecial() {
-        if (this.delay_especial == 0) {
+        if (this.delay_especial <= 0) {
             this.delay_especial = 2;
             return true;
         } else {

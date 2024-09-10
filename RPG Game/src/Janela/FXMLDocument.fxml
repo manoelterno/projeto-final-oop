@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="janela.FXMLDocumentController">
+    <children>
+      <Label fx:id="lbl_rodadas" layoutX="416.0" layoutY="32.0" text="01">
+         <font>
+            <Font size="50.0" />
+         </font></Label>
+      <ImageView fx:id="HOMER" fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../74851745c36cd5023254ff7f73f2a70d.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbl_vidaJogador" layoutX="92.0" layoutY="32.0" text="1000" textFill="RED">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_vidaMonstro" layoutX="665.0" layoutY="32.0" text="2000" textFill="RED">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_ajuda" layoutX="486.0" layoutY="48.0" mnemonicParsing="false" onAction="#btn_ajudaAction" prefHeight="41.0" prefWidth="38.0" text="?">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+      <ImageView fx:id="HOMER1" fitHeight="150.0" fitWidth="200.0" layoutX="651.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../74851745c36cd5023254ff7f73f2a70d.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="165.0" layoutX="250.0" layoutY="425.0" stroke="BLACK" strokeType="INSIDE" width="409.0" />
+      <Button fx:id="btn_cavaleiro" layoutX="283.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCavaleiro" prefHeight="129.0" prefWidth="121.0" text="CAVALEIRO">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_mago" layoutX="470.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoMago" prefHeight="129.0" prefWidth="121.0" text="MAGO">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_atacar" layoutX="309.0" layoutY="540.0" mnemonicParsing="false" onAction="#botaoAtacar" prefHeight="41.0" prefWidth="121.0" text="ATACAR">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Button>
+      <Label fx:id="lbl_log" layoutX="272.0" layoutY="449.0" prefHeight="55.0" prefWidth="364.0" text="LOG">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_item" layoutX="470.0" layoutY="540.0" mnemonicParsing="false" onAction="#botaoUsarItem" prefHeight="41.0" prefWidth="121.0" text="USAR ITEM">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_ataqueNormal" layoutX="283.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoAtaqueNormal" prefHeight="129.0" prefWidth="121.0" text="ATAQUE NORMAL">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_ataqueEspecial" layoutX="470.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoAtaqueEspecial" prefHeight="129.0" prefWidth="121.0" text="ATAQUE ESPECIAL">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_cura" layoutX="283.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCura" prefHeight="129.0" prefWidth="121.0" text="POCAO DE CURA">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_forca" layoutX="470.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoForca" prefHeight="129.0" prefWidth="121.0" text="POCAO DE FORCA">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </Button>
+    </children>
+</AnchorPane>

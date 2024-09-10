@@ -31,6 +31,7 @@ public class Jogo {
      * as rodadas de batalha. A batalha continua até que o chefão ou o jogador
      * seja derrotado. Os logs do jogo são gravados em um arquivo de texto.
      */
+    /*
     public void play() {
         int qual_Decisao;
 
@@ -67,11 +68,12 @@ public class Jogo {
         }
 
     }
-
+*/
     /**
      * Permite ao jogador escolher entre um ataque normal ou especial. A escolha
      * depende do tempo de recarga do ataque especial e da classe do jogador.
      */
+    /*
     public void ataquePlayer() {
         int tipo_ataque;
 
@@ -99,7 +101,7 @@ public class Jogo {
         }
 
     }
-
+*/
     /**
      * Executa o ataque do jogador caso ele seja um Mago. Verifica se o ataque é
      * normal ou especial e ajusta o dano infligido ao chefão de acordo com o
@@ -110,6 +112,8 @@ public class Jogo {
      * @return true se o ataque foi executado com sucesso, false se o ataque
      * especial ainda está recarregando.
      */
+    
+    /*
     public boolean ataqueMago(int tipo_Ataque) {
 
         if (tipo_Ataque == 1) {
@@ -140,6 +144,8 @@ public class Jogo {
         System.err.println("Aviso de erro"); //nunca chega neste return
         return false;
     }
+    
+    */
 
     /**
      * Executa o ataque do jogador caso ele seja um Cavaleiro. Verifica se o
@@ -151,36 +157,7 @@ public class Jogo {
      * @return true se o ataque foi executado com sucesso, false se o ataque
      * especial ainda está recarregando.
      */
-    public boolean ataqueCavaleiro(int tipo_Ataque) {
-        if (tipo_Ataque == 1) {
-            chefao.setVida(chefao.getVida() - jogador.ataqueNormal());
-            System.out.println("O Cavaleiro acertou o monstro com um ataque simples e causou " + jogador.ataqueNormal() + " de dano");
-            return true;
-
-        } else if (tipo_Ataque == 2) {
-            if (jogador.ataqueEspecial() == true) {
-                if (jogador.getInventario().isEspecial()) {
-                    chefao.setVida(chefao.getVida() - jogador.getInventario().usarForca(((Cavaleiro) jogador).getDano_especial()));
-                    System.out.println("O Cavaleiro acertou o monstro com um ataque poderoso e fortalecido, causando " + ((Cavaleiro) jogador).getDano_especial() * 2
-                            + " de dano");
-                    jogador.getInventario().setEspecial(false);
-                    return true;
-                } else {
-                    chefao.setVida(chefao.getVida() - ((Cavaleiro) jogador).getDano_especial());
-                    System.out.println("O Cavaleiro acertou o monstro com um ataque poderoso e causou " + ((Cavaleiro) jogador).getDano_especial() + " de dano");
-                    return true;
-                }
-
-            } else {
-                System.out.println("Ataque especial recarregando... Tente no próximo turno");
-                return false;
-            }
-        }
-
-        System.err.println("Aviso De erro"); //nunca chega neste return
-        return false;
-    }
-
+    
     /**
      * Permite ao jogador escolher e usar um item de cura ou de força. A
      * quantidade de itens restantes é atualizada após o uso.
@@ -205,10 +182,10 @@ public class Jogo {
      */
     public void pocaoCura() {
         if (jogador.getInventario().getNum_pocao_vida() <= 0) {
-            System.out.println("Acao invalida.");
-            System.out.println("Pocoes restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e "
-                    + jogador.getInventario().getNum_pocao_forca() + " de forca");
-            return;
+        //    System.out.println("Acao invalida.");
+            //System.out.println("Pocoes restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e "
+                //    + jogador.getInventario().getNum_pocao_forca() + " de forca");
+           return;
         }
 
         if (jogador.getInventario().usarVida(jogador.getVida()) > jogador.getVida_max()) {
@@ -218,12 +195,13 @@ public class Jogo {
         }
 
         jogador.getInventario().setNum_pocao_vida(jogador.getInventario().getNum_pocao_vida() - 1);
-
+        /*
         System.out.println("O " + jogador.getClass().getName() + " usou uma pocao de cura e aumentou sua vida atual em "
                 + jogador.getInventario().getPocao_vida().getVALOR_POCAO_VIDA());
         System.out.println("A vida atual do personagem é: " + jogador.getVida());
         System.out.println("Pocoes restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e "
                 + jogador.getInventario().getNum_pocao_forca() + " de forca");
+        */
     }
 
     /**
@@ -232,9 +210,7 @@ public class Jogo {
      */
     public void pocaoForca() {
         if (jogador.getInventario().getNum_pocao_forca() <= 0) {
-            System.out.println("Acao inválida.");
-            System.out.println("Pocoes restantes: " + jogador.getInventario().getNum_pocao_vida() + " de vida e "
-                    + jogador.getInventario().getNum_pocao_forca() + " de forca");
+           
             return;
         }
 
@@ -322,7 +298,7 @@ public class Jogo {
     public void ataqueChefao() {
         int dano = chefao.ataqueNormal();
         jogador.setVida(jogador.getVida() - dano);
-        System.out.println("\nO Monstro atacou o jogador causando " + dano + " de dano.");
+        //System.out.println("\nO Monstro atacou o jogador causando " + dano + " de dano.");
     }
 
     /**
@@ -343,4 +319,76 @@ public class Jogo {
 
         return false;
     }
+
+    public void instanciarMago() {
+        jogador = new Mago();
+    }
+
+    public void instanciarCavaleiro() {
+        jogador = new Cavaleiro();
+    }
+
+    public Player getJogador() {
+        return jogador;
+    }
+
+    public Personagem getChefao() {
+        return chefao;
+    }
+
+    public void ataqueCavaleiro(int tipo_Ataque) {
+        if (tipo_Ataque == 1) {
+            chefao.setVida(chefao.getVida() - jogador.ataqueNormal());
+            //System.out.println("O Cavaleiro acertou o monstro com um ataque simples e causou " + jogador.ataqueNormal() + " de dano");
+            return;
+
+        } else if (tipo_Ataque == 2) {
+            if (jogador.ataqueEspecial() == true) {
+                if (jogador.getInventario().isEspecial()) {
+                    chefao.setVida(chefao.getVida() - jogador.getInventario().usarForca(((Cavaleiro) jogador).getDano_especial()));
+                    //System.out.println("O Cavaleiro acertou o monstro com um ataque poderoso e fortalecido, causando " + ((Cavaleiro) jogador).getDano_especial() * 2
+                    //     + " de dano");
+                    jogador.getInventario().setEspecial(false);
+                    return;
+                } else {
+                    chefao.setVida(chefao.getVida() - ((Cavaleiro) jogador).getDano_especial());
+                    //System.out.println("O Cavaleiro acertou o monstro com um ataque poderoso e causou " + ((Cavaleiro) jogador).getDano_especial() + " de dano");
+                    return;
+                }
+
+            } else {
+                //System.out.println("Ataque especial recarregando... Tente no próximo turno");
+                return;
+            }
+        }
+    }
+    
+    public void ataqueMago(int tipo_Ataque) {
+
+        if (tipo_Ataque == 1) {
+            chefao.setVida(chefao.getVida() - jogador.ataqueNormal());
+       //     System.out.println("O Mago lancou um simples feitiço contra o Monstro e causou " + jogador.ataqueNormal() + " de dano");
+            return;
+
+        } else if (tipo_Ataque == 2) {
+            if (jogador.ataqueEspecial() == true) {
+                if (jogador.getInventario().isEspecial()) {
+                    chefao.setVida(chefao.getVida() - jogador.getInventario().usarForca(((Mago) jogador).getDano_especial()));
+             //       System.out.println("O Mago lancou um feitico poderoso e fortalecido"
+                 //           + " contra o Monstro e causou " + ((Mago) jogador).getDano_especial() * 2 + " de dano");
+                    jogador.getInventario().setEspecial(false);
+                    return;
+                } else {
+                            chefao.setVida(chefao.getVida() - ((Mago) jogador).getDano_especial());
+                  //  System.out.println("O Mago lancou um feitico poderoso contra o Monstro e causou " + ((Mago) jogador).getDano_especial() + " de dano");
+                    return;
+                }
+
+            } else {
+              //  System.out.println("Ataque especial recarregando... Tente no próximo turno.");
+                return;
+            }
+        }
+        return;
+        }
 }
