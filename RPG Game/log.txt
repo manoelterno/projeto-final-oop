@@ -1,0 +1,60 @@
+INICIO DA BATALHA
+Vida do Principal.Cavaleiro: 1500
+Vida do Principal.Monstro: 2000
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 1350
+Vida do Principal.Monstro: 2000
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 1200
+Vida do Principal.Monstro: 1600
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 1350
+Vida do Principal.Monstro: 1600
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 1200
+Vida do Principal.Monstro: 1500
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 1050
+Vida do Principal.Monstro: 1500
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 900
+Vida do Principal.Monstro: 1100
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 1050
+Vida do Principal.Monstro: 1100
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 900
+Vida do Principal.Monstro: 1100
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 750
+Vida do Principal.Monstro: 700
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 600
+Vida do Principal.Monstro: 600
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 450
+Vida do Principal.Monstro: 600
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 300
+Vida do Principal.Monstro: 400
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 150
+Vida do Principal.Monstro: 300
+
+RESULTADO DA RODADA 0
+Vida do Principal.Cavaleiro: 0
+Vida do Principal.Monstro: 100
+
