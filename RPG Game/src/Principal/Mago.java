@@ -16,7 +16,7 @@ public class Mago extends Player {
      * ataques causam 175 de dano normal e 350 de dano especial.
      */
     public Mago() {
-        super(800, 3, 3);
+        super(800, 4, 2);
         this.dano_normal = 175;
         this.dano_especial = 350;
     }

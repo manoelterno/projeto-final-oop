@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="JogoRPG.jar" size="15031" download="eager" />
+    <jar href="JogoRPG.jar" size="16273" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="janela.Visual"  name="JogoRPG" />
   <update check="always"/>

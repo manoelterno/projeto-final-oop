@@ -22,7 +22,7 @@ public class Cavaleiro extends Player {
      * normal, e dano especial do Cavaleiro.
      */
     public Cavaleiro() {
-        super(1500, 3, 3);
+        super(1500, 2, 4);
         this.dano_normal = 100;
         this.dano_especial = 200;
     }

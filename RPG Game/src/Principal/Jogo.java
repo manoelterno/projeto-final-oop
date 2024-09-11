@@ -295,10 +295,18 @@ public class Jogo {
      * Realiza o ataque do chefão no jogador, que pode ser um ataque normal ou
      * especial, dependendo das condições.
      */
-    public void ataqueChefao() {
-        int dano = chefao.ataqueNormal();
-        jogador.setVida(jogador.getVida() - dano);
-        //System.out.println("\nO Monstro atacou o jogador causando " + dano + " de dano.");
+    public int ataqueChefao() {
+         if (chefao.ataqueEspecial() == false) {
+            jogador.setVida(jogador.getVida() - chefao.ataqueNormal());
+            System.out.println("O Monstro atacou o " + jogador.getClass().getName() + " e causou " + chefao.ataqueNormal() + " de dano");
+            return chefao.ataqueNormal();
+
+        } else {
+            jogador.setVida(jogador.getVida() - ((Monstro) chefao).getDano_especial());
+            System.out.println("O Monstro atacou o " + jogador.getClass().getName() + " com um ataque especial e causou "
+                    + ((Monstro) chefao).getDano_especial() + " de dano");
+            return ((Monstro) chefao).getDano_especial();
+        }
     }
 
     /**
