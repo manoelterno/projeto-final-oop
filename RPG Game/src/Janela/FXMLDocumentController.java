@@ -76,7 +76,20 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void btn_ajudaAction(ActionEvent event) {
-        JOptionPane.showMessageDialog(null, "Mensagem de ajuda a ser feita");
+        Alert ajuda = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Ajuda");
+        alert.setHeaderText("Bem Vindo a Drakovia herói");
+        alert.setContentText("Neste RPG por turnos, você joga como um Cavaleiro ou Mago enfrentando um monstro.\n\
+            Turnos: Você e o monstro atacam alternadamente.\n\
+            Ataques: Escolha entre um ataque normal ou especial (mais forte, mas com possui uma recarga).\n\
+            Inventário: Use poções para curar ou aumentar a força de seu próximo ataque especial.\n\
+            Objetivo: Derrote o monstro antes de perder toda sua vida!\n\
+            Boa sorte!");
+        
+        ButtonType buttonTypeOK = new ButtonType("Ok");
+        //ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+        
+        ajuda.getButtonTypes().setAll(buttonTypeOK);
 
     }
 
