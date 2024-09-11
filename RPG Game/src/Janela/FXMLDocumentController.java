@@ -31,9 +31,6 @@ public class FXMLDocumentController implements Initializable {
     private Label lbl_log;
 
     @FXML
-    private ImageView HOMER1;
-
-    @FXML
     private Button btn_mago;
 
     @FXML
@@ -41,9 +38,6 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private Button btn_cavaleiro;
-
-    @FXML
-    private ImageView HOMER;
 
     @FXML
     private Button btn_ajuda;
