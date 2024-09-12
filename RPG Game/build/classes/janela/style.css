@@ -1,0 +1,18 @@
+.icon-button {
+    -fx-background-color: transparent, transparent, transparent, transparent, transparent;
+}
+
+.icon-button:hover{
+	-fx-cursor: hand;	
+}
+
+.btn {
+    -fx-border-color: #898117;  /* Cor da borda */
+    -fx-border-style: solid;      /* Estilo da borda */
+    -fx-border-radius: 10;     /* Raios da borda para bordas arredondadas */
+    -fx-background-radius: 10;
+    -fx-background-color: #e5db64;
+    -fx-font-weight: bolder;      /* Fonte mais grossa */
+    -fx-text-fill: #898117;       /* Cor da fonte */
+    
+}

@@ -196,5 +196,15 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <ImageView fx:id="imgGameover" fitHeight="121.0" fitWidth="613.0" layoutX="237.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/gameover.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgWin" fitHeight="360.0" fitWidth="685.0" layoutX="207.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@Imagens/win.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

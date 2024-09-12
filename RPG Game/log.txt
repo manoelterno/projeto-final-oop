@@ -1,60 +1,44 @@
 INICIO DA BATALHA
-Vida do Principal.Cavaleiro: 1500
-Vida do Principal.Monstro: 2000
+Vida do Cavaleiro: 1500
+Vida do Monstro: 2000
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 1350
-Vida do Principal.Monstro: 2000
+RESULTADO DA RODADA 1
+Vida do Cavaleiro: 1350
+Vida do Monstro: 1800
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 1200
-Vida do Principal.Monstro: 1600
+RESULTADO DA RODADA 2
+Vida do Cavaleiro: 1050
+Vida do Monstro: 1700
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 1350
-Vida do Principal.Monstro: 1600
+RESULTADO DA RODADA 3
+Vida do Cavaleiro: 1200
+Vida do Monstro: 1700
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 1200
-Vida do Principal.Monstro: 1500
+RESULTADO DA RODADA 4
+Vida do Cavaleiro: 900
+Vida do Monstro: 1500
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 1050
-Vida do Principal.Monstro: 1500
+RESULTADO DA RODADA 5
+Vida do Cavaleiro: 600
+Vida do Monstro: 1500
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 900
-Vida do Principal.Monstro: 1100
+RESULTADO DA RODADA 6
+Vida do Cavaleiro: 300
+Vida do Monstro: 1100
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 1050
-Vida do Principal.Monstro: 1100
+RESULTADO DA RODADA 7
+Vida do Cavaleiro: 450
+Vida do Monstro: 1100
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 900
-Vida do Principal.Monstro: 1100
+RESULTADO DA RODADA 8
+Vida do Cavaleiro: 300
+Vida do Monstro: 900
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 750
-Vida do Principal.Monstro: 700
+RESULTADO DA RODADA 9
+Vida do Cavaleiro: 150
+Vida do Monstro: 900
 
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 600
-Vida do Principal.Monstro: 600
-
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 450
-Vida do Principal.Monstro: 600
-
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 300
-Vida do Principal.Monstro: 400
-
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 150
-Vida do Principal.Monstro: 300
-
-RESULTADO DA RODADA 0
-Vida do Principal.Cavaleiro: 0
-Vida do Principal.Monstro: 100
+RESULTADO DA RODADA 10
+Vida do Cavaleiro: 0
+Vida do Monstro: 500
 
