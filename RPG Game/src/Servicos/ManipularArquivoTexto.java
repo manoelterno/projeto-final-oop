@@ -13,7 +13,16 @@ import java.util.Scanner;
  */
 public class ManipularArquivoTexto {
 
+    /**
+     * Objeto {@code Formatter} utilizado para gravar dados em arquivos durante
+     * o jogo. Usado para salvar informações importantes, como o progresso do
+     * jogador.
+     */
     private static Formatter gravador;
+
+    /**
+     * Objeto {@code Scanner} utilizado para ler dados do arquivo log. 
+     */
     private static Scanner leitor;
 
     /**
