@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
 <?import javafx.embed.swing.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.effect.*?>
@@ -13,81 +15,186 @@
 
 <AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="janela.FXMLDocumentController">
     <children>
-      <Label fx:id="lbl_rodadas" layoutX="416.0" layoutY="32.0" text="01">
+      <ImageView fitHeight="713.0" fitWidth="1113.0" layoutX="-3.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/Battleground1.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="365.0" layoutX="64.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@Imagens/bar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="365.0" layoutX="678.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/bar.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbl_rodadas" layoutX="500.0" layoutY="48.0" text="01" textFill="WHITE">
          <font>
             <Font size="50.0" />
          </font></Label>
-      <Label fx:id="lbl_vidaJogador" layoutX="92.0" layoutY="32.0" text="1000" textFill="RED">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="178.0" layoutX="321.0" layoutY="409.0" stroke="BLACK" strokeType="INSIDE" width="443.0" />
+      <Label fx:id="lbl_vidaJogador" layoutX="215.0" layoutY="42.0" text="1000">
          <font>
-            <Font size="50.0" />
+            <Font name="Courier New" size="50.0" />
          </font>
       </Label>
-      <Label fx:id="lbl_vidaMonstro" layoutX="665.0" layoutY="32.0" text="2000" textFill="RED">
+      <Label fx:id="lbl_vidaMonstro" layoutX="774.0" layoutY="39.0" text="2000">
          <font>
-            <Font size="50.0" />
+            <Font name="Courier New" size="50.0" />
          </font>
       </Label>
-      <Button fx:id="btn_ajuda" layoutX="486.0" layoutY="48.0" mnemonicParsing="false" onAction="#botaoAjuda" prefHeight="41.0" prefWidth="38.0" text="?">
+      <Button fx:id="btn_ajuda" layoutX="555.0" layoutY="53.0" mnemonicParsing="false" onAction="#botaoAjuda" prefHeight="60.0" prefWidth="73.0" styleClass="icon-button" stylesheets="@style.css">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
-         </cursor></Button>
-      <Rectangle fx:id="retangulo1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="165.0" layoutX="250.0" layoutY="425.0" stroke="BLACK" strokeType="INSIDE" width="409.0" />
-      <Button fx:id="btn_cavaleiro" layoutX="283.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCavaleiro" prefHeight="129.0" prefWidth="121.0" text="CAVALEIRO">
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagens/duv.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Rectangle fx:id="retangulo1" arcHeight="5.0" arcWidth="5.0" height="165.0" layoutX="328.0" layoutY="416.0" stroke="BLACK" strokeType="INSIDE" width="430.0" />
+      <Button fx:id="btn_cavaleiro" layoutX="321.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCavaleiro" prefHeight="129.0" prefWidth="121.0" styleClass="btn" stylesheets="@style.css" text="CAVALEIRO">
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </Button>
-      <Button fx:id="btn_mago" layoutX="470.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoMago" prefHeight="129.0" prefWidth="121.0" text="MAGO">
+      <Button fx:id="btn_mago" layoutX="649.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoMago" prefHeight="129.0" prefWidth="121.0" styleClass="btn" stylesheets="@style.css" text="MAGO">
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </Button>
-      <Button fx:id="btn_atacar" layoutX="309.0" layoutY="540.0" mnemonicParsing="false" onAction="#botaoAtacar" prefHeight="41.0" prefWidth="121.0" text="ATACAR">
+      <Rectangle fx:id="recPocoes" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="106.0" layoutX="19.0" layoutY="446.0" stroke="BLACK" strokeType="INSIDE" width="258.0" />
+      <Button fx:id="btn_atacar" layoutX="369.0" layoutY="525.0" mnemonicParsing="false" onAction="#botaoAtacar" prefHeight="41.0" prefWidth="121.0" styleClass="btn" stylesheets="@style.css" text="ATACAR" textAlignment="CENTER" textFill="#898117" wrapText="true">
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
-      <Label fx:id="lbl_log" layoutX="272.0" layoutY="449.0" prefHeight="55.0" prefWidth="365.0" text="LOG">
+      <Label fx:id="lbl_logJogador" alignment="CENTER" layoutX="346.0" layoutY="434.0" prefHeight="41.0" prefWidth="415.0" text="LOG" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btn_item" layoutX="470.0" layoutY="540.0" mnemonicParsing="false" onAction="#botaoUsarItem" prefHeight="41.0" prefWidth="121.0" text="USAR ITEM">
+      <Button fx:id="btn_item" layoutX="588.0" layoutY="525.0" mnemonicParsing="false" onAction="#botaoUsarItem" prefHeight="41.0" prefWidth="121.0" styleClass="btn" stylesheets="@style.css" text="USAR ITEM" textAlignment="CENTER" textFill="#898117" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_ataqueNormal" layoutX="321.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoAtaqueNormal" prefHeight="129.0" prefWidth="121.0" styleClass="btn" stylesheets="@style.css" text="ATAQUE NORMAL" textAlignment="CENTER" wrapText="true">
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </Button>
-      <Button fx:id="btn_ataqueNormal" layoutX="283.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoAtaqueNormal" prefHeight="129.0" prefWidth="121.0" text="ATAQUE NORMAL">
+      <Button fx:id="btn_ataqueEspecial" layoutX="649.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoAtaqueEspecial" prefHeight="129.0" prefWidth="121.0" styleClass="btn" stylesheets="@style.css" text="ATAQUE ESPECIAL" textAlignment="CENTER" wrapText="true">
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </Button>
-      <Button fx:id="btn_ataqueEspecial" layoutX="470.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoAtaqueEspecial" prefHeight="129.0" prefWidth="121.0" text="ATAQUE ESPECIAL">
+      <Button fx:id="btn_cura" layoutX="321.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCura" prefHeight="129.0" prefWidth="121.0" styleClass="btn" stylesheets="@style.css" text="POCAO DE CURA" textAlignment="CENTER" wrapText="true">
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </Button>
-      <Button fx:id="btn_cura" layoutX="283.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCura" prefHeight="129.0" prefWidth="121.0" text="POCAO DE CURA">
+      <Button fx:id="btn_forca" layoutX="649.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoForca" prefHeight="129.0" prefWidth="121.0" styleClass="btn" stylesheets="@style.css" text="POCAO DE FORCA" textAlignment="CENTER" wrapText="true">
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </Button>
-      <Button fx:id="btn_forca" layoutX="470.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoForca" prefHeight="129.0" prefWidth="121.0" text="POCAO DE FORCA">
-         <cursor>
-            <Cursor fx:constant="CROSSHAIR" />
-         </cursor>
-      </Button>
-      <Rectangle fx:id="retangulo2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="165.0" layoutX="30.0" layoutY="425.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Label fx:id="lbl_forca" layoutX="66.0" layoutY="466.0" text="Poçao de Força: ">
+      <Rectangle fx:id="retangulo2" arcHeight="5.0" arcWidth="5.0" height="92.0" layoutX="26.0" layoutY="454.0" stroke="BLACK" strokeType="INSIDE" width="244.0" />
+      <Label fx:id="lbl_forca" layoutX="76.0" layoutY="473.0" prefHeight="23.0" prefWidth="192.0" text="Poçao de Força: " textFill="WHITE">
+         <font>
+            <Font name="Courier New" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_cura" layoutX="76.0" layoutY="503.0" prefHeight="23.0" prefWidth="173.0" text="Poçao de Cura: " textFill="WHITE">
+         <font>
+            <Font name="Courier New" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_sair" layoutX="950.0" layoutY="503.0" mnemonicParsing="false" onAction="#botaoSair" prefHeight="79.0" prefWidth="86.0" styleClass="icon-button" stylesheets="@style.css">
+         <graphic>
+            <ImageView fitHeight="90.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagens/sair.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label fx:id="lbl_logMonstro" alignment="CENTER" layoutX="346.0" layoutY="476.0" prefHeight="41.0" prefWidth="415.0" text="LOG" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lbl_cura" layoutX="68.0" layoutY="527.0" text="Poçao de Cura: ">
+      <ImageView fitHeight="60.0" fitWidth="72.0" layoutX="337.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="72.0" layoutX="703.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgPocaoCura" fitHeight="31.0" fitWidth="29.0" layoutX="35.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/pocCura.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgPocaoForca" fitHeight="29.0" fitWidth="36.0" layoutX="35.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/pocForca.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgMonstro" fitHeight="150.0" fitWidth="228.0" layoutX="836.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@Imagens/idleLobo.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCavaleiroMorto" fitHeight="158.0" fitWidth="146.0" layoutX="78.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@Imagens/imgCavaleiroMorto.png" />
+         </image></ImageView>
+      <ImageView fx:id="imgMago" fitHeight="150.0" fitWidth="200.0" layoutX="99.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@Imagens/IdleMago.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCavaleiro" fitHeight="158.0" fitWidth="146.0" layoutX="78.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@Imagens/IdleCavaleiro.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgMagoMorto" fitHeight="150.0" fitWidth="200.0" layoutX="99.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@Imagens/imgMagoMorto.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgMonstroMorto" fitHeight="150.0" fitWidth="228.0" layoutX="836.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@Imagens/imgMonstroMorto.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_voltar" layoutX="800.0" layoutY="533.0" mnemonicParsing="false" onAction="#botaoVoltar" prefHeight="41.0" prefWidth="107.0" styleClass="btn" stylesheets="@style.css" text="VOLTAR" textAlignment="CENTER" textFill="#898117" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
-      </Label>
-      <Button fx:id="btn_sair" layoutX="741.0" layoutY="545.0" mnemonicParsing="false" onAction="#botaoSair" text="Sair" />
+      </Button>
     </children>
 </AnchorPane>
