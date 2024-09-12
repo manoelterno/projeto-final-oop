@@ -49,13 +49,15 @@ import static jdk.nashorn.tools.ShellFunctions.input;
 public class FXMLDocumentController implements Initializable {
 
     /**
-     * Retângulo que representa o lugar onde as informações da rodada serão mostradas.
+     * Retângulo que representa o lugar onde as informações da rodada serão
+     * mostradas.
      */
     @FXML
     private Rectangle retangulo1;
 
     /**
-     * Retângulo que representa o lugar onde as informações das poções serão mostradas.
+     * Retângulo que representa o lugar onde as informações das poções serão
+     * mostradas.
      */
     @FXML
     private Rectangle retangulo2;
@@ -256,8 +258,8 @@ public class FXMLDocumentController implements Initializable {
         iniciar_jogo();
         jogo = new Jogo();
 
-        lbl_logJogador.setPrefWidth(365);
-        lbl_logMonstro.setPrefWidth(365);
+        lbl_logJogador.setPrefWidth(400);
+        lbl_logMonstro.setPrefWidth(400);
 
         translateImg(imgCavaleiro, 50);
         translateImg(imgMonstro, -50);
@@ -418,9 +420,11 @@ public class FXMLDocumentController implements Initializable {
         if (jogo.getJogador() instanceof Cavaleiro) {
             jogo.ataqueCavaleiro(1);
             lbl_logJogador.setText("Você causou " + ((Cavaleiro) jogo.getJogador()).getDANO_NORMAL() + " de dano");
+            lbl_logJogador.setWrapText(true);
         } else if (jogo.getJogador() instanceof Mago) {
             jogo.ataqueMago(1);
             lbl_logJogador.setText("Você causou " + ((Mago) jogo.getJogador()).getDANO_NORMAL() + " de dano");
+            lbl_logJogador.setWrapText(true);
         }
 
         if (jogo.verificarFimDeJogo()) {
@@ -528,6 +532,7 @@ public class FXMLDocumentController implements Initializable {
         btn_forca.setVisible(false);
 
         lbl_logJogador.setText("Você curou 300 de vida");
+        lbl_logJogador.setWrapText(true);
 
         atualizarJogo();
 
@@ -570,7 +575,7 @@ public class FXMLDocumentController implements Initializable {
     private void atualizarJogo() {
         lbl_logMonstro.setVisible(true);
         lbl_logMonstro.setText("O Monstro te atacou causando " + jogo.ataqueChefao() + " de dano");
-        lbl_logMonstro.setWrapText(true);
+        //lbl_logMonstro.setWrapText(true);
 
         if (jogo.verificarFimDeJogo()) {
             lbl_vidaJogador.setText(Integer.toString(jogo.getJogador().getVida()));

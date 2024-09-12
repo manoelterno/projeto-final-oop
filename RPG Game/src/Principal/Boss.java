@@ -42,8 +42,8 @@ public abstract class Boss extends Personagem {
      * Verifica se o boss está vivo ou morto. Este método deve ser implementado
      * pelas subclasses para definir a lógica de verificação de vida.
      *
-     * @return {@code true} se o boss estiver vivo (vida > 0), {@code false} se
-     * estiver morto (vida <= 0).
+     * @return {@code true} se o boss estiver vivo (vida maior que 0), {@code false} se
+     * estiver morto (vida menor ou igual a 0).
      */
     @Override
     public abstract boolean vivoOuMorto();

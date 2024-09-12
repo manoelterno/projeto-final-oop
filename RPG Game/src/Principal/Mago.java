@@ -59,8 +59,8 @@ public class Mago extends Player {
     /**
      * Verifica se o Mago está vivo ou morto.
      *
-     * @return {@code true} se o Mago estiver vivo (vida > 0), {@code false} se
-     * estiver morto (vida <= 0).
+     * @return {@code true} se o Mago estiver vivo (vida maior que 0), {@code false} se
+     * estiver morto (vida menor ou igual a 0).
      */
     @Override
     public boolean vivoOuMorto() {

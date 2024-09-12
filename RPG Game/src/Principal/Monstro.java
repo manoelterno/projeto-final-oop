@@ -62,8 +62,8 @@ public class Monstro extends Boss {
     /**
      * Verifica se o monstro está vivo ou morto.
      *
-     * @return {@code true} se o monstro estiver vivo (vida > 0), {@code false}
-     * se estiver morto (vida <= 0).
+     * @return {@code true} se o monstro estiver vivo (vida maior 0), {@code false}
+     * se estiver morto (vida menor  ou que 0).
      */
     @Override
     public boolean vivoOuMorto() {
