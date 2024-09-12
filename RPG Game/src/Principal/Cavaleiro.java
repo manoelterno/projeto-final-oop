@@ -10,12 +10,12 @@ public class Cavaleiro extends Player {
     /**
      * O dano causado por um ataque normal do Cavaleiro.
      */
-    private final int dano_normal;
+    private final int DANO_NORMAL;
 
     /**
      * O dano causado por um ataque especial do Cavaleiro.
      */
-    private final int dano_especial;
+    private final int DANO_ESPECIAL;
 
     /**
      * Construtor da classe Cavaleiro. Inicializa a vida, inventário, dano
@@ -23,8 +23,8 @@ public class Cavaleiro extends Player {
      */
     public Cavaleiro() {
         super(1500, 2, 4);
-        this.dano_normal = 100;
-        this.dano_especial = 200;
+        this.DANO_NORMAL = 100;
+        this.DANO_ESPECIAL = 200;
     }
 
     /**
@@ -34,7 +34,7 @@ public class Cavaleiro extends Player {
      */
     @Override
     public int ataqueNormal() {
-        return getDano_normal();
+        return getDANO_NORMAL();
     }
 
     /**
@@ -73,8 +73,8 @@ public class Cavaleiro extends Player {
      *
      * @return O valor do dano normal.
      */
-    public int getDano_normal() {
-        return dano_normal;
+    public int getDANO_NORMAL() {
+        return DANO_NORMAL;
     }
 
     /**
@@ -82,7 +82,7 @@ public class Cavaleiro extends Player {
      *
      * @return O valor do dano especial.
      */
-    public int getDano_especial() {
-        return dano_especial;
+    public int getDANO_ESPECIAL() {
+        return DANO_ESPECIAL;
     }
 }

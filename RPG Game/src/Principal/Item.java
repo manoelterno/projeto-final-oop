@@ -7,7 +7,17 @@ package Principal;
  */
 public abstract class Item {
 
+    /**
+     * O valor de restauração de vida que uma poção de cura fornece ao jogador.
+     * Usado para aumentar a saúde do jogador ao usar uma poção de vida.
+     */
     private final int VALOR_POCAO_VIDA;
+
+    /**
+     * O valor de aumento de força que uma poção de força concede ao jogador.
+     * Usado para dobrar o dano do próximo ataque especial ao consumir uma poção
+     * de força.
+     */
     private final int VALOR_POCAO_FORCA;
 
     /**

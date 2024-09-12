@@ -7,8 +7,15 @@ package Principal;
  */
 public class Mago extends Player {
 
-    private final int dano_normal;
-    private final int dano_especial;
+    /**
+     * O dano causado por um ataque normal do Mago.
+     */
+    private final int DANO_NORMAL;
+
+    /**
+     * O dano causado por um ataque normal do Mago.
+     */
+    private final int DANO_ESPECIAL;
 
     /**
      * Cria uma nova instância de {@code Mago} com valores predefinidos para
@@ -17,8 +24,8 @@ public class Mago extends Player {
      */
     public Mago() {
         super(800, 4, 2);
-        this.dano_normal = 175;
-        this.dano_especial = 350;
+        this.DANO_NORMAL = 175;
+        this.DANO_ESPECIAL = 350;
     }
 
     /**
@@ -28,7 +35,7 @@ public class Mago extends Player {
      */
     @Override
     public int ataqueNormal() {
-        return getDano_normal();
+        return getDANO_NORMAL();
     }
 
     /**
@@ -65,8 +72,8 @@ public class Mago extends Player {
      *
      * @return O dano normal do Mago.
      */
-    public int getDano_normal() {
-        return dano_normal;
+    public int getDANO_NORMAL() {
+        return DANO_NORMAL;
     }
 
     /**
@@ -74,8 +81,8 @@ public class Mago extends Player {
      *
      * @return O dano especial do Mago.
      */
-    public int getDano_especial() {
-        return dano_especial;
+    public int getDANO_ESPECIAL() {
+        return DANO_ESPECIAL;
     }
 
 }

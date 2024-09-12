@@ -7,17 +7,44 @@ package Principal;
  */
 public class Inventario {
 
+    /**
+     * Objeto {@code Item} que representa a poção de vida no inventário do
+     * jogador. Usado para restaurar a saúde do jogador quando consumido.
+     */
     private Item pocao_vida;
+
+    /**
+     * Objeto {@code Item} que representa a poção de força no inventário do
+     * jogador. Usado para dobrar o dano do próximo ataque especial quando
+     * consumido.
+     */
     private Item pocao_forca;
+
+    /**
+     * Número de poções de vida disponíveis no inventário do jogador. Indica
+     * quantas vezes o jogador pode restaurar sua saúde usando poções.
+     */
     private int num_pocao_vida;
+
+    /**
+     * Número de poções de força disponíveis no inventário do jogador. Indica
+     * quantas vezes o jogador pode aumentar seu dano com o uso de poções de
+     * força.
+     */
     private int num_pocao_forca;
-    private boolean especial = false;
+
+    /**
+     * Indica se o jogador está com o efeito especial de força ativo. Se
+     * {@code true}, o próximo ataque especial causará dano dobrado.
+     */
+    private boolean especial;
 
     /**
      * Cria uma nova instância de {@code Inventario} com valores padrão.
      * Inicialmente, o inventário não contém poções e a quantidade é zero.
      */
     public Inventario() {
+        this.especial = false;
     }
 
     /**

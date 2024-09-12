@@ -8,9 +8,22 @@ import java.util.Random;
  */
 public class Monstro extends Boss {
 
-    private final Random random;
-    private int dano_especial = 300;
-    private final int dano_normal = 150;
+    /**
+     * Objeto {@code Random} utilizado para gerar valores aleatórios no decorrer
+     * do jogo, valores responsáveis por decidir se o Monstro irá usar um ataque
+     * normal ou um ataque especial.
+     */
+    private final Random RANDOM;
+
+    /**
+     * O dano causado por um ataque especial do Monstro.
+     */
+    private final int DANO_ESPECIAL = 300;
+
+    /**
+     * O dano causado por um ataque normal do Monstro.
+     */
+    private final int DANO_NORMAL = 150;
 
     /**
      * Cria uma nova instância de {@code Monstro} com uma vida inicial de 2000.
@@ -19,7 +32,7 @@ public class Monstro extends Boss {
      */
     public Monstro() {
         super(2000);
-        random = new Random();
+        RANDOM = new Random();
     }
 
     /**
@@ -29,7 +42,7 @@ public class Monstro extends Boss {
      */
     @Override
     public int ataqueNormal() {
-        return dano_normal;
+        return getDANO_NORMAL();
     }
 
     /**
@@ -41,7 +54,7 @@ public class Monstro extends Boss {
      */
     @Override
     public boolean ataqueEspecial() {
-        int chance = random.nextInt(100);
+        int chance = RANDOM.nextInt(100);
 
         return chance >= 80;
     }
@@ -62,16 +75,12 @@ public class Monstro extends Boss {
      *
      * @return O dano especial do monstro.
      */
-    public int getDano_especial() {
-        return dano_especial;
+    public int getDANO_ESPECIAL() {
+        return DANO_ESPECIAL;
+    }
+    
+    public int getDANO_NORMAL(){
+        return DANO_NORMAL;
     }
 
-    /**
-     * Define o valor do dano especial causado pelo monstro.
-     *
-     * @param dano_especial O novo valor do dano especial.
-     */
-    public void setDano_especial(int dano_especial) {
-        this.dano_especial = dano_especial;
-    }
 }
